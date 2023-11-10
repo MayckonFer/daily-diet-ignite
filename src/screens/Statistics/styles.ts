@@ -38,7 +38,20 @@ export const Title = styled.Text`
   `}
 `;
 
-export const WrapperStatistics = styled.View``;
+export const WrapperStatistics = styled.View`
+  flex: 1;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+
+  margin-top: 23px;
+`;
+
+export const WrapperMelsInDiet = styled.View`
+  flex: 1;
+  flex-direction: row;
+  gap: 12px;
+`;
 
 export const Button = styled(TouchableOpacity)`
   position: absolute;

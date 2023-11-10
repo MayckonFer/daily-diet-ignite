@@ -7,8 +7,11 @@ import {
   Icon,
   Title,
   WrapperStatistics,
+  WrapperMelsInDiet,
 } from "./styles";
+
 import { StatusDiet } from "@components/StatusDiet";
+import { Card } from "./components/Card";
 
 export function Statistics() {
   return (
@@ -23,7 +26,26 @@ export function Statistics() {
       <ContainerStatistics>
         <Title>Estatísticas gerais</Title>
 
-        <WrapperStatistics></WrapperStatistics>
+        <WrapperStatistics>
+          <Card
+            sequenciDish={22}
+            descriptionDish="melhor sequência de pratos dentro da dieta"
+          />
+          <Card sequenciDish={109} descriptionDish="refeições registradas" />
+
+          <WrapperMelsInDiet>
+            <Card
+              sequenciDish={99}
+              descriptionDish="refeições dentro da dieta"
+              type="ISDIET"
+            />
+            <Card
+              sequenciDish={10}
+              descriptionDish="refeições fora da dieta"
+              type="NOTDIET"
+            />
+          </WrapperMelsInDiet>
+        </WrapperStatistics>
       </ContainerStatistics>
     </>
   );
