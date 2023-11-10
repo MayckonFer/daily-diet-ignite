@@ -1,29 +1,21 @@
 import React from "react";
+import { TouchableOpacityProps } from "react-native";
 
-import { Button } from "./Button";
+import { IsDietTypeStyleProps, IsDietProps } from "@utils/statusDiet";
 
-import { IsDietTypeStyleProps } from "@utils/statusDiet";
+import { Container, Icon } from "./styles";
+import { StatusDiet } from "@components/StatusDiet";
 
-import {
-  Container,
-  ContainerButton,
-  PorcentageDiet,
-  ParagraphDiet,
-} from "./styles";
-
-type Props = {
+type Props = TouchableOpacityProps & {
   type: IsDietTypeStyleProps;
 };
 
-export function DietMealIntregrity({ type }: Props) {
+export function DietMealIntregrity({ type, ...rest }: IsDietProps) {
   return (
-    <Container type={type}>
-      <ContainerButton>
-        <Button icon="arrow-upward" type="ISDIET" />
-      </ContainerButton>
+    <Container {...rest} type={type}>
+      <Icon type={type} as={Icon} />
 
-      <PorcentageDiet>90,86%</PorcentageDiet>
-      <ParagraphDiet>das refeições dentro da dieta</ParagraphDiet>
+      <StatusDiet porcentage="90,86%" paragraph="das refeições da dieta" />
     </Container>
   );
 }

@@ -1,5 +1,5 @@
+import styled, { css } from "styled-components/native";
 import { SafeAreaView } from "react-native-safe-area-context";
-import styled from "styled-components/native";
 
 export const ContainerHome = styled(SafeAreaView)`
   flex: 1;
@@ -8,14 +8,22 @@ export const ContainerHome = styled(SafeAreaView)`
 `;
 
 export const ContainerMeals = styled.View`
+  flex: 1;
   margin-top: 40px;
 `;
 
+export const HeaderContainerMeals = styled.View`
+  margin-bottom: 10px;
+`;
+
 export const Title = styled.Text`
-  font-size: ${({ theme }) => theme.FONT_SIZE.MD}px;
-  font-weight: 400;
-  color: ${({ theme }) => theme.COLORS.GRAY_2};
   margin-bottom: 8px;
+
+  ${({ theme }) => css`
+    font-size: ${theme.FONT_SIZE.MD}px;
+    font-weight: ${theme.FONT_FAMILY.REGULAR};
+    color: ${theme.COLORS.GRAY_2};
+  `}
 `;
 
 export const WrapperMeals = styled.View`
@@ -23,7 +31,9 @@ export const WrapperMeals = styled.View`
 `;
 
 export const DateTitle = styled.Text`
-  font-size: ${({ theme }) => theme.FONT_SIZE.XL}px;
-  font-weight: bold;
-  color: ${({ theme }) => theme.COLORS.GRAY_1};
+  ${({ theme }) => css`
+    font-size: ${theme.FONT_SIZE.XL}px;
+    font-weight: ${theme.FONT_FAMILY.BOLD};
+    color: ${theme.COLORS.GRAY_1};
+  `}
 `;

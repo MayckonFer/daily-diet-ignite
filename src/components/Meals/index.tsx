@@ -1,8 +1,7 @@
 import React from "react";
+import { TouchableOpacityProps } from "react-native";
 
 import { IsDietTypeStyleProps } from "@utils/statusDiet";
-
-import { Pencil } from "phosphor-react-native";
 
 import {
   Container,
@@ -11,29 +10,23 @@ import {
   Status,
   WrapperMeals,
   Divider,
-  EditMeal,
-  IconEdit,
 } from "./styles";
 
-type Props = {
+type Props = TouchableOpacityProps & {
   hour: string;
   meal: string;
   type: IsDietTypeStyleProps;
 };
 
-export function Meals({ hour, meal, type }: Props) {
+export function Meals({ hour, meal, type, ...rest }: Props) {
   return (
-    <Container>
+    <Container {...rest}>
       <Hour>{hour}</Hour>
       <Divider />
       <WrapperMeals>
-        <Snack>{meal}</Snack>
+        <Snack numberOfLines={1}>{meal}</Snack>
         <Status type={type} />
       </WrapperMeals>
-
-      <EditMeal>
-        <IconEdit weight="fill" />
-      </EditMeal>
     </Container>
   );
 }

@@ -12,6 +12,7 @@ import { ThemeProvider } from "styled-components";
 import theme from "./src/theme";
 
 import { Home } from "@screens/Home";
+import { Statistics } from "@screens/Statistics";
 
 export default function App() {
   const [fontsLoaded] = useFonts({ NunitoSans_400Regular, NunitoSans_700Bold });
@@ -23,7 +24,7 @@ export default function App() {
         backgroundColor="transparent"
         translucent
       />
-      {fontsLoaded ? <Home /> : <Text>Carregando</Text>}
+      {fontsLoaded ? <Statistics /> : <Text>Carregando</Text>}
     </ThemeProvider>
   );
 }
