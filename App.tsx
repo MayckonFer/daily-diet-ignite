@@ -13,6 +13,7 @@ import theme from "./src/theme";
 
 import { Home } from "@screens/Home";
 import { Statistics } from "@screens/Statistics";
+import { CreateDiet } from "@screens/CreateDiet";
 
 export default function App() {
   const [fontsLoaded] = useFonts({ NunitoSans_400Regular, NunitoSans_700Bold });
@@ -24,7 +25,7 @@ export default function App() {
         backgroundColor="transparent"
         translucent
       />
-      {fontsLoaded ? <Statistics /> : <Text>Carregando</Text>}
+      {fontsLoaded ? <CreateDiet /> : <Text>Carregando</Text>}
     </ThemeProvider>
   );
 }

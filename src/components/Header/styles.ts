@@ -1,21 +1,43 @@
-import styled from "styled-components/native";
+import styled, { css } from "styled-components/native";
+import { TouchableOpacity } from "react-native";
 
-export const ContainerHeader = styled.View`
+import { ArrowLeft } from "phosphor-react-native";
+import { SafeAreaView } from "react-native-safe-area-context";
+
+import { IsDietProps } from "@utils/statusDiet";
+
+export const ContainerHeader = styled(SafeAreaView)<IsDietProps>`
+  background-color: ${({ theme, type }) =>
+    type
+      ? type === "ISDIET"
+        ? theme.COLORS.GREEN_LIGHT
+        : theme.COLORS.RED_LIGHT
+      : theme.COLORS.GRAY_5};
+  padding: 24px;
+
   width: 100%;
+  height: 164px;
 
-  display: flex;
+  position: relative;
+
   flex-direction: row;
-  justify-content: space-between;
+  align-items: center;
 `;
 
-export const Logo = styled.Image`
-  width: 82px;
-  height: 37px;
+export const ButtonBack = styled(TouchableOpacity)``;
+
+export const TextHeader = styled.Text`
+  text-align: center;
+  margin: 0 auto;
+
+  ${({ theme }) => css`
+    font-size: ${theme.FONT_SIZE.LG}px;
+    font-weight: ${theme.FONT_FAMILY.BOLD};
+    color: ${theme.COLORS.GRAY_1};
+  `}
 `;
 
-export const UserImage = styled.Image`
-  width: 40px;
-  height: 40px;
-  border-radius: 999px;
-  border: 2px solid ${({ theme }) => theme.COLORS.GRAY_1};
-`;
+export const Icon = styled(ArrowLeft).attrs(({ theme }) => ({
+  size: 24,
+  color: theme.COLORS.GRAY_2,
+}))``;

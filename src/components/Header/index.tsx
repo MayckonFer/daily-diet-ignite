@@ -1,17 +1,21 @@
 import React from "react";
-import { Text } from "react-native";
 
-import { ContainerHeader, Logo, UserImage } from "./styles";
+import { ContainerHeader, Icon, TextHeader, ButtonBack } from "./styles";
+import { IsDietTypeStyleProps } from "@utils/statusDiet";
 
-import LogoImg from "@assets/logo.png";
-import UserImg from "@assets/user-image.jpg";
+type Props = {
+  name: string;
+  type?: IsDietTypeStyleProps;
+};
 
-export function Header() {
+export function Header({ name, type }: Props) {
   return (
-    <ContainerHeader>
-      <Logo source={LogoImg} />
+    <ContainerHeader type={type} as={ContainerHeader}>
+      <ButtonBack>
+        <Icon />
+      </ButtonBack>
 
-      <UserImage source={UserImg} />
+      <TextHeader>{name}</TextHeader>
     </ContainerHeader>
   );
 }

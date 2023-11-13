@@ -1,8 +1,10 @@
 import React, { useState } from "react";
-import { Header } from "@components/Header";
 import { FlatList } from "react-native";
 
 import {
+  ContainerHeader,
+  Logo,
+  UserImage,
   ContainerHome,
   ContainerMeals,
   Title,
@@ -17,6 +19,9 @@ import { Meals } from "@components/Meals";
 import { ListEmpty } from "@components/ListEmpty/Index";
 
 import { IsDietTypeStyleProps } from "@utils/statusDiet";
+
+import LogoImg from "@assets/logo.png";
+import UserImg from "@assets/user-image.jpg";
 
 interface MealProps {
   hour: string;
@@ -84,7 +89,11 @@ export function Home() {
 
   return (
     <ContainerHome>
-      <Header />
+      <ContainerHeader>
+        <Logo source={LogoImg} />
+
+        <UserImage source={UserImg} />
+      </ContainerHeader>
 
       <DietMealIntregrity type="ISDIET" />
 
