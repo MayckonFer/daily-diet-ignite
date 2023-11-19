@@ -2,18 +2,19 @@ import React from "react";
 import { TouchableOpacityProps } from "react-native";
 import { MaterialIcons } from "@expo/vector-icons";
 
-import { Container, Icon, Title } from "./styles";
+import { Container, Icon, Title, IsActiveBackgroundAndBorder } from "./styles";
 
-type Props = TouchableOpacityProps & {
-  icon?: keyof typeof MaterialIcons.glyphMap;
-  title: string;
-};
+type Props = TouchableOpacityProps &
+  IsActiveBackgroundAndBorder & {
+    icon?: keyof typeof MaterialIcons.glyphMap;
+    title: string;
+  };
 
-export function ButtonIcon({ icon, title, ...rest }: Props) {
+export function ButtonIcon({ isActive, icon, title, ...rest }: Props) {
   return (
-    <Container {...rest}>
-      <Icon name={icon} />
-      <Title>{title}</Title>
+    <Container isActive={isActive} {...rest} as={Container}>
+      <Icon isActive={isActive} name={icon} />
+      <Title isActive={isActive}>{title}</Title>
     </Container>
   );
 }

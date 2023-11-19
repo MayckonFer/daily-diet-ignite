@@ -1,8 +1,9 @@
 import React from "react";
+import { TextInputProps } from "react-native";
 
 import { InputContainer, IsTextArea } from "./styles";
 
-type Props = {
+type Props = TextInputProps & {
   type?: IsTextArea;
   dateAndHour?: IsTextArea;
 };

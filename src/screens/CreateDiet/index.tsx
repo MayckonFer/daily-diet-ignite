@@ -1,4 +1,5 @@
-import React from "react";
+import React, { useState } from "react";
+import { FlatList } from "react-native";
 
 import {
   Container,
@@ -17,6 +18,8 @@ import { ButtonIsDiet } from "@components/ButtonIsDiet";
 import { ButtonIcon } from "@components/ButtonIcon";
 
 export function CreateDiet() {
+  const [diet, setDiet] = useState("");
+
   return (
     <>
       <Header name="Nova refeição" />
@@ -29,7 +32,7 @@ export function CreateDiet() {
 
         <WrapperInputs>
           <Label>Descrição</Label>
-          <Input type="TEXTAREA" />
+          <Input type="TEXTAREA" multiline={true} numberOfLines={5} />
         </WrapperInputs>
 
         <ContainerDateAndHour>
@@ -48,8 +51,19 @@ export function CreateDiet() {
           <TextQuestion>Está detro da dieta?</TextQuestion>
 
           <WrapperButtons>
-            <ButtonIsDiet name="Sim" type="ISDIET" />
-            <ButtonIsDiet name="Não" type="NOTDIET" />
+            <FlatList
+              data={["Sim", "Não"]}
+              keyExtractor={(item) => item}
+              renderItem={({ item }) => (
+                <ButtonIsDiet
+                  name={item}
+                  isActive={item === diet}
+                  onPress={() => setDiet(item)}
+                  type={item === "Sim" ? "ISDIET" : "NOTDIET"}
+                />
+              )}
+              horizontal
+            />
           </WrapperButtons>
         </ContainerQuestionIsDiet>
 
