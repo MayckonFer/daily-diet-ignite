@@ -4,11 +4,11 @@ import styled, { css } from "styled-components/native";
 export const Container = styled(SafeAreaView)`
   flex: 1;
   gap: 24px;
-  background-color: ${({ theme }) => theme.COLORS.GRAY_7};
+  background-color: ${({ theme }) => theme.COLORS.WHITE};
   border-radius: 20px;
 
   padding: 24px;
-  margin-top: -14px;
+  margin-top: -10px;
 `;
 
 export const WrapperInputs = styled.View`

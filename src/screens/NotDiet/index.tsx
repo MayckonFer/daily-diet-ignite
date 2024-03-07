@@ -20,7 +20,7 @@ export function NotDiet() {
         alt="Imagem de um homem sentado com o anti-braço esquerdo para cima"
       />
 
-      <ButtonIcon title="Ir para página inicial" />
+      <ButtonIcon title="Ir para página inicial" isActive />
     </Container>
   );
 }

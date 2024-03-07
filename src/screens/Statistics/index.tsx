@@ -1,4 +1,5 @@
 import React from "react";
+import { useNavigation } from "@react-navigation/native";
 
 import {
   ContainerStatistics,
@@ -14,10 +15,16 @@ import { StatusDiet } from "@components/StatusDiet";
 import { Card } from "./components/Card";
 
 export function Statistics() {
+  const navigation = useNavigation();
+
+  function handleBackHome() {
+    navigation.navigate("home");
+  }
+
   return (
     <>
       <HeaderStatistics type="ISDIET">
-        <Button>
+        <Button onPress={handleBackHome}>
           <Icon type="ISDIET" as={Icon} />
         </Button>
 

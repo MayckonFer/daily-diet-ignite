@@ -16,7 +16,7 @@ export function IsDiet() {
 
       <Image source={ImageIsDiet} alt="Imagem de uma mulher dançando" />
 
-      <ButtonIcon title="Ir para página inicial" />
+      <ButtonIcon title="Ir para página inicial" isActive />
     </Container>
   );
 }

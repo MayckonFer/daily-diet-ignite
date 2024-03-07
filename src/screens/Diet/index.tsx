@@ -1,5 +1,6 @@
 import React from "react";
-import { Text } from "react-native";
+
+import { useNavigation, useRoute } from "@react-navigation/native";
 
 import {
   Container,
@@ -15,7 +16,21 @@ import { Header } from "@components/Header";
 import { InsideDietInfo } from "./components/InsideDietInfo";
 import { ButtonIcon } from "@components/ButtonIcon";
 
+type RouteParams = {
+  meal: string;
+};
+
 export function Diet() {
+  const navigation = useNavigation();
+
+  const route = useRoute();
+
+  const { meal } = route.params as RouteParams;
+
+  function handleEditMeal(meal: string) {
+    navigation.navigate("editDiet", { meal });
+  }
+
   return (
     <>
       <Header name="Refeição" type="ISDIET" />
@@ -36,7 +51,12 @@ export function Diet() {
         <InsideDietInfo type="ISDIET" />
 
         <WrapperButtonFooter>
-          <ButtonIcon title="Editar refeição" icon="edit" isActive />
+          <ButtonIcon
+            title="Editar refeição"
+            icon="edit"
+            isActive
+            onPress={() => handleEditMeal(meal)}
+          />
           <ButtonIcon title="Excluir refeição" icon="delete" />
         </WrapperButtonFooter>
       </Container>

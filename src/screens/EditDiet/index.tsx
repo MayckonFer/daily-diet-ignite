@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { FlatList, ScrollView } from "react-native";
+import { useNavigation } from "@react-navigation/native";
 
 import {
   Container,
@@ -17,12 +18,18 @@ import { Input } from "@components/Input";
 import { ButtonIsDiet } from "@components/ButtonIsDiet";
 import { ButtonIcon } from "@components/ButtonIcon";
 
-export function CreateDiet() {
+export function EditDiet() {
   const [diet, setDiet] = useState("");
+
+  const navigation = useNavigation();
+
+  function handleEditMeal(meal: string) {
+    navigation.navigate("editDiet", { meal });
+  }
 
   return (
     <>
-      <Header name="Nova refeição" />
+      <Header name="Editar refeição" />
 
       <ScrollView>
         <Container>
@@ -69,7 +76,7 @@ export function CreateDiet() {
           </ContainerQuestionIsDiet>
 
           <ContainerButton>
-            <ButtonIcon title="Cadastrar refeição" isActive />
+            <ButtonIcon title="Salvar alterações" isActive />
           </ContainerButton>
         </Container>
       </ScrollView>

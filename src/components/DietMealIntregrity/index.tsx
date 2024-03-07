@@ -1,11 +1,16 @@
 import React from "react";
 
-import { IsDietProps } from "@utils/statusDiet";
+import { IsDietTypeStyleProps } from "@utils/statusDiet";
 
 import { Container, Icon } from "./styles";
 import { StatusDiet } from "@components/StatusDiet";
+import { TouchableOpacityProps } from "react-native";
 
-export function DietMealIntregrity({ type, ...rest }: IsDietProps) {
+type Props = TouchableOpacityProps & {
+  type: IsDietTypeStyleProps;
+};
+
+export function DietMealIntregrity({ type, ...rest }: Props) {
   return (
     <Container {...rest} type={type}>
       <Icon type={type} as={Icon} />
