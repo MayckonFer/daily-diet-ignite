@@ -41,10 +41,11 @@ export const Title = styled.Text`
 export const WrapperStatistics = styled.View`
   flex: 1;
   flex-direction: column;
+  justify-content: space-between;
   align-items: center;
   gap: 12px;
 
-  margin-top: 23px;
+  margin-top: 24px;
 `;
 
 export const WrapperMelsInDiet = styled.View`
@@ -55,7 +56,7 @@ export const WrapperMelsInDiet = styled.View`
 
 export const Button = styled(TouchableOpacity)`
   position: absolute;
-  top: 80px;
+  top: 90px;
   left: 24px;
 `;
 

@@ -13,6 +13,7 @@ import {
 
 import { StatusDiet } from "@components/StatusDiet";
 import { Card } from "./components/Card";
+import { Header } from "@components/Header";
 
 export function Statistics() {
   const navigation = useNavigation();

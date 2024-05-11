@@ -42,10 +42,10 @@ export const ContainerButton = styled(TouchableOpacity)<IsActive>`
       : ""};
 
   border-radius: 6px;
-  width: 159px;
+  width: 100%;
   height: 50px;
 
-  margin-right: 25px;
+  margin-right: 30px;
 
   flex-direction: row;
   align-items: center;

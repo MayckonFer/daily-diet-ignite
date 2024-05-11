@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { FlatList, ScrollView } from "react-native";
+import { FlatList, ScrollView, Text, View } from "react-native";
 import { useNavigation } from "@react-navigation/native";
 
 import {
@@ -62,13 +62,22 @@ export function EditDiet() {
               <FlatList
                 data={["Sim", "Não"]}
                 keyExtractor={(item) => item}
-                renderItem={({ item }) => (
-                  <ButtonIsDiet
-                    name={item}
-                    isActive={item === diet}
-                    onPress={() => setDiet(item)}
-                    type={item === "Sim" ? "ISDIET" : "NOTDIET"}
-                  />
+                renderItem={({ item, index }) => (
+                  <View
+                    style={{
+                      justifyContent: "center",
+                      alignItems: "center",
+                      width: "100%",
+                    }}
+                  >
+                    <ButtonIsDiet
+                      key={index}
+                      name={item}
+                      isActive={item === diet}
+                      onPress={() => setDiet(item)}
+                      type={item === "Sim" ? "ISDIET" : "NOTDIET"}
+                    />
+                  </View>
                 )}
                 horizontal
               />

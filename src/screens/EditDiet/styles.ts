@@ -45,7 +45,7 @@ export const TextQuestion = styled.Text`
 export const WrapperButtons = styled.View`
   flex-direction: row;
   align-items: center;
-  justify-content: space-between;
+  justify-content: center;
 `;
 
 export const ContainerButton = styled.View`
